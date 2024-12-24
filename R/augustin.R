@@ -16,7 +16,9 @@ newPlayer <- function(id){
 newGame <- function(nPl=3,
                     nDice=5,
                     maxOPen=3,
-                    symSet=c("O", "I", "R")){
+                    symSet=c(crayon::blue("O"),
+                             crayon::red("I"),
+                             crayon::green("R"))){
   structure(list(players=lapply(1:nPl, function(i) newPlayer(i)),
                  finished=FALSE,
                  openCards=list(),
@@ -77,7 +79,9 @@ dieRoll <- function(...){
 
 #' @export
 #' @method dieRoll default
-dieRoll.default <- function(sset=c("O", "I", "R"), nDice=5, ...){
+dieRoll.default <- function(sset=c(crayon::blue("O"),
+                                   crayon::red("I"),
+                                   crayon::green("R")), nDice=5, ...){
   structure(sample(sset, size = nDice, replace = TRUE),
             class="dieRoll"
   )

@@ -22,7 +22,7 @@ rollMatch(gg)
 
 isPerfectMatch(gg)
 which(isPerfectMatch(gg))
-gg1 <- reroll(gg, "3,4")
+gg1 <- reroll(gg, "2,3,4")
 rollMatch(gg1)
 gg2 <- reroll(gg1, "4")
 rollMatch(gg2)
